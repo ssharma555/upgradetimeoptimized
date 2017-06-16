@@ -7,6 +7,9 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.upgrade.pojo.User;
 
+/**
+ * Created by ssharma on 6/12/17.
+ */
 
 public class UserMapper implements RowMapper<User>{
 

@@ -1,5 +1,9 @@
 package com.upgrade.pojo;
 
+/**
+ * Created by ssharma on 6/12/17.
+ */
+
 public class User {
 	
 	private int id;
