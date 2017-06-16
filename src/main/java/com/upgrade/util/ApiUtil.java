@@ -2,6 +2,7 @@ package com.upgrade.util;
 
 import org.springframework.web.client.RestTemplate;
 
+import com.upgrade.pojo.Configs;
 import com.upgrade.pojo.DashboardConfig;
 
 /**
@@ -10,14 +11,19 @@ import com.upgrade.pojo.DashboardConfig;
 
 public class ApiUtil {
 	
-	public DashboardConfig getDashboardConfig(int id){
+	public Configs getDashboardConfig(String id){
 		RestTemplate restTemplate = new RestTemplate();
-		DashboardConfig dashboardConfig = restTemplate.getForObject("http://dashboard.qe.hortonworks.com:5000/hwqe-dashboard-api/v1/configs?id="+id, DashboardConfig.class);
-		return dashboardConfig;
+		DashboardConfig dashboardConfig = restTemplate.getForObject("http://dashboard.qe.hortonworks.com:5000/hwqe-dashboard-api/v1/configs", DashboardConfig.class);
+		for(Configs config : dashboardConfig.getConfigs()){
+			if(config.getId().equals(id)){
+				return config;
+			}
+		}
+		return null;
 	}
 	
 	public static void main(String [] args){
-		new ApiUtil().getDashboardConfig(4);
+		new ApiUtil().getDashboardConfig("4");
 	}
 
 }
