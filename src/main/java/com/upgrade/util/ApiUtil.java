@@ -11,19 +11,16 @@ import com.upgrade.pojo.DashboardConfig;
 
 public class ApiUtil {
 	
-	public Configs getDashboardConfig(String id){
+	public static DashboardConfig getDashboardConfig(){
 		RestTemplate restTemplate = new RestTemplate();
 		DashboardConfig dashboardConfig = restTemplate.getForObject("http://dashboard.qe.hortonworks.com:5000/hwqe-dashboard-api/v1/configs", DashboardConfig.class);
-		for(Configs config : dashboardConfig.getConfigs()){
+		
+		return dashboardConfig;
+	}
+
+	/*for(Configs config : dashboardConfig.getConfigs()){
 			if(config.getId().equals(id)){
 				return config;
 			}
-		}
-		return null;
-	}
-	
-	public static void main(String [] args){
-		new ApiUtil().getDashboardConfig("4");
-	}
-
+		}*/
 }

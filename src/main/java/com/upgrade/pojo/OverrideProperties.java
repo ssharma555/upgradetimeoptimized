@@ -44,6 +44,8 @@ public class OverrideProperties
     private String database_flavor;
 
     private String ambari_db;
+    
+    private String wire_encryption;
 
     public String getOs ()
     {
@@ -235,10 +237,19 @@ public class OverrideProperties
         this.ambari_db = ambari_db;
     }
 
+	public String getWire_encryption() {
+		return wire_encryption;
+	}
+
+	public void setWire_encryption(String wire_encryption) {
+		this.wire_encryption = wire_encryption;
+	}
+
     @Override
     public String toString()
     {
         return "ClassPojo [os = "+os+", is_ha_test = "+is_ha_test+", ambari_version = "+ambari_version+", upgrade_to = "+upgrade_to+", jdk_version = "+jdk_version+", motd_enable = "+motd_enable+", ambari_agent_user = "+ambari_agent_user+", mr_framework = "+mr_framework+", customized_services_users = "+customized_services_users+", security = "+security+", ambari_old_branch = "+ambari_old_branch+", ambari_custom_user = "+ambari_custom_user+", stack_upgrade_to = "+stack_upgrade_to+", hdp_repo_baseurl = "+hdp_repo_baseurl+", STACK = "+STACK+", testsuite_file = "+testsuite_file+", xa_database_flavor = "+xa_database_flavor+", database_flavor = "+database_flavor+", ambari_db = "+ambari_db+"]";
     }
+    
 }
 
