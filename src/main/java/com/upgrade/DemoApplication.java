@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.upgrade.util.UpgradeUtils;
+import com.upgrade.util.JenkinsParameters;
 
 /**
  * Created by ssharma on 6/12/17.
@@ -16,6 +17,9 @@ public class DemoApplication implements CommandLineRunner{
 
 	@Autowired
 	private UpgradeUtils upgradeUtils;
+	
+	@Autowired
+	private JenkinsParameters jps;
 	
 	
 	public static void main(String[] args) {
@@ -28,6 +32,7 @@ public class DemoApplication implements CommandLineRunner{
 		
 		//System.out.println(upgradeUtils.getId("101").getName());
 		System.out.println(upgradeUtils.getUpgradeConfigs("2.6.0"));
+		//System.out.println(jps.storeJenkinsParameters("549237"));
 		
 	}
 }

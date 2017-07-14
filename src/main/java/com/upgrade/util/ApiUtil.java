@@ -18,9 +18,4 @@ public class ApiUtil {
 		return dashboardConfig;
 	}
 
-	/*for(Configs config : dashboardConfig.getConfigs()){
-			if(config.getId().equals(id)){
-				return config;
-			}
-		}*/
 }
